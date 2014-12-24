@@ -27,16 +27,9 @@ def main(word,rating):
             if check_fetch is None:
                 c.execute('INSERT into wordVals values (?,?)',(list_item.string,rating))
             else:
-                new_rating = int(rating) + int(check_fetch[1])
+                new_rating = (int(rating) + int(check_fetch[1]))/2
                 c.execute('UPDATE wordVals SET value=? WHERE word=?',(new_rating,check_fetch[0]))
             
-            
-        
-        
-
-
-
-
 
     except Exception as e:
         print (str(e))
