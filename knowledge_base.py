@@ -16,6 +16,9 @@ The Display is FULL HD (445 ppi), the clarity is simply superb. The battery last
 If your Budget is 30k, go get this phone, don't even think twice!"""
 
 
+spec_list =['Brand','Handset Color','Form','Call Features','Touch Screen','SIM Type','Model ID','In the Box','Sound Enhancement','Video Player','Music Player','Secondary Camera','Other Camera Features','Primary Camera','Audio Jack','Preinstalled Browser','Bluetooth','Navigation Technology','NFC','Internet Features','Wifi','USB Connectivit','3G','Sensors','Phone Book Memory','Call Memory','SMS Memory','Important Apps','Additional Features','Warranty Summary','Weight','Size','Resolution','Other Display Features','Size','Talk Time','Standby Time','Type','Memory','Internal','Operating Freq','Graphics','OS','Processor']
+#print(spec_list)
+
 def processor(data):
     try:
         tokenized = nltk.word_tokenize(data)
@@ -25,19 +28,61 @@ def processor(data):
         #time.sleep(55)
 
         entities = re.findall(r'NE\s(.*?)/',str(namedEnt))
-        #print (entities)
+        descriptives_adj = re.findall(r'\(\'(\w*)\',\s\'JJ\w?\'',str(tagged))
         '''if len(entities) > 1:
             pass
         elif len(entities) == 0:
             pass
-        else:
-            print ('Named : ',entities[0])
-        '''    
+        else: '''
+        print ('Sentence with POS-tagging : ')
+        print (str(tagged))
+        print ('-----------------------------------------------')
+        print ('Named Entity of the Sentence : ',entities)
+        print ('Descriptions : ')
+        for desc in descriptives:
+          print (desc)
 
  
     except Exception as e:
         print ('Failed in the first loop of processor')  
         print (str(e))
-        
 
-processor(exampleReview)
+'''
+sentences = re.findall(r'(.*?)[\.|\?|!+]',exampleReview)
+for sent in sentences:
+    print ('******************************************************')
+    print ('******************************************************')
+    print('The Sentence : ',sent)
+    print ('-----------------------------------------------')
+    processor(sent)    
+
+'''
+
+
+sentences = re.findall(r'(.*?)[\.|\?|!+]',exampleReview)
+for sent in sentences:
+    tokenized = nltk.word_tokenize(sent)
+    tagged = nltk.pos_tag(tokenized)
+    namedEnt = nltk.ne_chunk(tagged, binary=True)
+    entities = re.findall(r'NE\s(.*?)/',str(namedEnt))
+        
+    descriptives_noun = re.findall(r'\(\'(\w*)\',\s\'NN\w?\'',str(tagged))
+    descriptives_verbs = re.findall(r'\(\'(\w*)\',\s\'VB\w?\'',str(tagged))
+    descriptives_adj = re.findall(r'\(\'(\w*)\',\s\'JJ\w?\'',str(tagged))
+    print ('---------------------------------------------------------------------------------------------------------------------')
+    print ('*** The Sentence : ***')
+    print (sent)
+    print ('*** POS-tagged Sentence : ***')
+    print (str(tagged))
+    print ('*** Named Entity : ***')
+    for entity in entities:
+        print(entity)
+    print ('*** Nouns : ***')    
+    for desc in descriptives_noun:
+          print (desc)
+    print ('*** Verbs : ***')    
+    for desc in descriptives_verbs:
+          print (desc)
+    print ('*** Adjectives : ***')
+    for desc in descriptives_adj:
+          print (desc)

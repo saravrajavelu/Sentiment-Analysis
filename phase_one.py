@@ -73,4 +73,4 @@ for i in review_list:
 
 '''
 
-print (review_list[1].text)
+#print (review_list[1].text)
