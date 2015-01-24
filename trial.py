@@ -1,7 +1,7 @@
-import requests
+'''import requests
 import re
 from bs4 import BeautifulSoup
-'''
+
 with requests.Session() as c:
     url = 'http://www.flipkart.com/'
     QUERY = 'nexus 5'
@@ -9,8 +9,6 @@ with requests.Session() as c:
     search_data = dict(q=QUERY)
     page = c.get(url, data=search_data)
     soup =  BeautifulSoup(page.content)
-'''
-
 
 url = 'http://www.flipkart.com/search'
 MAIN_SITE = 'http://www.flipkart.com'
@@ -37,3 +35,15 @@ temp_url = re.sub(r'\/p\/','/product-reviews/',item_url)
 review_url = re.sub(r'&otracker.+','$type=all',temp_url)
 
 print(review_url)
+'''
+from numpy.ma.mrecords import openfile
+import re
+f = open("AFINN-111.txt","r")
+temp = re.findall(r'(.*)',f.read())
+for item in temp:
+    if len(item) == 0:
+        pass
+    else:
+        print(item.split("\t",2))
+#print(temp)
+#print(f.read())

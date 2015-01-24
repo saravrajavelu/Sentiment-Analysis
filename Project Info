@@ -1,0 +1,52 @@
+Python Libraries (64bit AMD) :
+1. NLTK - Natural Language Toolkit
+2. NumPy
+3. SciPy
+4. BeautifulSoup - Parsing HTML
+5. Sqlite3 - SQL
+6. Requests - HTML Requests
+7. matplotlib - 2D Plotting
+8. Scikit & sklearn - Machine Learning
+9. Pandas - Data Analysis and Manipulation
+10. TextBlob - Processing Textual Data
+11. SentiWordNet* - Lexical Resource of Opinion Mining
+12. Gensim - Topic Modelling for Humans
+13. WordNet* - Database that groups English words into datasets called Synsets 
+
+
+* - Part of NLTK
+
+-------------------------------------------------------------------------------------
+
+Tutorials :
+
+1. Sentdex - Youtube - Sentiment Analysis: https://www.youtube.com/watch?v=CMyoQbBq5IE&list=PLQVvvaa0QuDfRO5bQFLcVgvIOIhNUZpZf
+2. Tutorial of Sentiment Analysis - Slideshare: http://www.slideshare.net/faigg/tutotial-of-sentiment-analysis
+
+-------------------------------------------------------------------------------------
+
+Papers :
+
+1. Feature-based Product Review Summarization Utilizing User Score: http://webcache.googleusercontent.com/search?q=cache:P9ItL0AVGUAJ:www.iis.sinica.edu.tw/page/jise/2010/201011_03.pdf+&cd=2&hl=en&ct=clnk&gl=in
+
+2. Promoting the Performance of Vertical Recommendation Systems by applying new Classification Techniques: http://www.sciencedirect.com/science/journal/09507051
+
+3. Semi-Supervised Recognition of Sarcastic Sentences in Twitter and Amazon: http://dl.acm.org/citation.cfm?id=1870568.1870582
+
+4. Sarcasm as Contrast between a Positive Sentiment and Negative Situation: http://www.cs.utah.edu/~huangrh/official-sarcasm-cameraReady-v2.pdf
+
+5.  Identifying Sarcasm in Twitter: A Closer Look: http://delivery.acm.org/10.1145/2010000/2002850/p581-gonzalez-ibanez.pdf?ip=115.248.50.31&id=2002850&acc=OPEN&key=045416EF4DDA69D9%2ED657981EAB260D60%2E4D4702B0C3E38B35%2E6D218144511F3437&CFID=473611612&CFTOKEN=26467013&__acm__=1421947070_87b79d599df0ce92267037fae0e84696
+
+6. The perfect solution for detecting sarcasm in tweets #not: http://www.aclweb.org/anthology/W13-1605
+
+-------------------------------------------------------------------------------------
+
+Webpages :
+
+1. The Sarcasm Detector : http://www.thesarcasmdetector.com/about/
+
+-------------------------------------------------------------------------------------
+
+Misc :
+
+1. AFINN - 111 : Rated 2477 Word list from -5 to +5. - http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010
