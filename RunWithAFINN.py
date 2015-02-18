@@ -7,7 +7,7 @@ import time
 from bs4 import BeautifulSoup
 
 #Connecting to knowledgeBase
-conn = sqlite3.connect('knowledgeBase.db')
+conn = sqlite3.connect('wordBase.db')
 c = conn.cursor()
 
 

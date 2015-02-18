@@ -21,8 +21,12 @@ Python Libraries (64bit AMD) :
 Tutorials :
 
 1. Sentdex - Youtube - Sentiment Analysis: https://www.youtube.com/watch?v=CMyoQbBq5IE&list=PLQVvvaa0QuDfRO5bQFLcVgvIOIhNUZpZf
+
 2. Tutorial of Sentiment Analysis - Slideshare: http://www.slideshare.net/faigg/tutotial-of-sentiment-analysis
 
+3. Porter Stemmer Algorithm : http://www.eecis.udel.edu/~trnka/CISC889-11S/lectures/dan-porters.pdf
+
+4. Machine Learning : https://class.coursera.org/machlearning-001/lecture
 -------------------------------------------------------------------------------------
 
 Papers :
@@ -39,14 +43,53 @@ Papers :
 
 6. The perfect solution for detecting sarcasm in tweets #not: http://www.aclweb.org/anthology/W13-1605
 
+7. A Fuzzy System For Concept-Level Sentiment Analysis: http://2014.eswc-conferences.org/sites/default/files/eswc2014-challenges_cl_submission_7.pdf
+
+8. Thumbs up? Sentiment Classification using Machine Learning Techniques : http://www.cs.cornell.edu/home/llee/papers/sentiment.pdf
+
+9. Yahoo! for Amazon: Opinion Extraction from Small Talk on the Web : http://papers.ssrn.com/sol3/papers.cfm?abstract_id=276189
+
+10. Sentiment Classification of Online Reviews to Travel Destinations by Supervised Machine Learning Approaches : http://ac.els-cdn.com/S0957417408005022/1-s2.0-S0957417408005022-main.pdf?_tid=8c84dbf6-b66b-11e4-9aef-00000aab0f26&acdnat=1424153556_290431adc7a68d34de6eb9de6930534e
+
+11. Mining the Peanut Gallery : Opinion Extraction and Semantic Classification of Product Reviews : http://www.kushaldave.com/p451-dave.pdf
+
+12. Text Categorization with Support Vector Machines - Learning with Many Relevant Features : http://www.cs.iastate.edu/~jtian/cs573/Papers/Joachims-ECML-98.pdf
+
+13. 13. A Study of Cross Validation and Bootstrap for Accuracy Estimation and Model Selection : http://www.cs.iastate.edu/~jtian/cs573/Papers/Kohavi-IJCAI-95.pdf
+
+14. Scaling High-Order Character Language Models to Gigabytes : http://www1.cs.columbia.edu/nlp/acl05soft/carpenter.pdf
+
+15. A Model of Textual Affect Sensing using Real-World Knowledge : http://web.media.mit.edu/~hugo/publications/papers/IUI2003-affectsensing.pdf
+
+16. Movie Review Mining -  A Comparison between Supervised and Unsupervised : http://www.computer.org/csdl/proceedings/hicss/2005/2268/04/22680112c.pdf
+
+17. Thumbs Up or Thumbs Down? Semantic Orientation Applied to Unsupervised Classification of Reviews : http://delivery.acm.org/10.1145/1080000/1073153/p417-turney.pdf?ip=115.248.50.33&id=1073153&acc=OPEN&key=045416EF4DDA69D9%2ED657981EAB260D60%2E4D4702B0C3E38B35%2E6D218144511F3437&CFID=627430936&CFTOKEN=36086773&__acm__=1424161967_296eb5ec150b471133e4bd4e467cbe29
+
+18. Measuring Praise and Criticism -  Inference of Semantic Orientation from Association : http://cogprints.org/3164/1/turney-littman-acm.pdf
+
+19. Sentiment Analysis - A Combined Approach : http://ac.els-cdn.com/S1751157709000108/1-s2.0-S1751157709000108-main.pdf?_tid=cc79327a-b693-11e4-a19a-00000aacb35d&acdnat=1424170843_2c0ff997b4c5c00f9ec4c42149db3105
+
+20. A Survey on Sentiment Detection of Reviews : http://ac.els-cdn.com/S0957417409001626/1-s2.0-S0957417409001626-main.pdf?_tid=cabe772e-b693-11e4-831a-00000aacb35e&acdnat=1424170840_dce4eb6115fd047bba72b2191b8e3887
+
+
 -------------------------------------------------------------------------------------
 
 Webpages :
 
 1. The Sarcasm Detector : http://www.thesarcasmdetector.com/about/
 
+2. Opinion Spam Detection: Detecting Fake Reviews and Reviewers: http://www.cs.uic.edu/~liub/FBS/fake-reviews.html
+
+3. Machine Learning - Sentiment Analysis : http://burakkanber.com/blog/machine-learning-sentiment-analysis/
+
 -------------------------------------------------------------------------------------
 
 Misc :
 
 1. AFINN - 111 : Rated 2477 Word list from -5 to +5. - http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010
+
+-------------------------------------------------------------------------------------
+
+Books :
+
+1. Sentiment Analysis and Opinion Mining : http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf
