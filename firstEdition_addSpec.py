@@ -153,16 +153,9 @@ for i in range(0,(total_no_of_reviews + 1),10):
 
 print('No.of reviews found : ' + str(reveiwList.count))
 
-'''
-no_spec = int(input('Enter no.of specifications : '))
-print (' Choose specifications : ')
-temp_count = 0
-specificationList = ['']*no_spec
-while temp_count < no_spec:
-    specificationList[temp_count] = input()
-    temp_count += 1
-'''
 
+
+reveiwList.addFeatures()
 
 
 def processor(productReview):
@@ -170,7 +163,7 @@ def processor(productReview):
         for exampleReview in productReview.userReviews:
             try:
 
-                sentences = re.findall(r'(.*?)[\.|\?|!+]',exampleReview.text)
+                sentences = re.findall(r'(.*?)[\.|\?|!+]',exampleReview)
                 '''sentences = re.findall(r'(.*?)[\.|\?|!+]',exampleReview)'''
                 for sent in sentences:
                     tokenized = nltk.word_tokenize(sent)
