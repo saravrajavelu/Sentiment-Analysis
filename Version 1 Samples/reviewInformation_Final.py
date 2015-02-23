@@ -55,7 +55,6 @@ for sent in sentences:
     print('The Sentence : ',sent)
     print ('-----------------------------------------------')
     processor(sent)    
-
 '''
 
 

@@ -1,6 +1,10 @@
 import nltk
+from nltk import bigrams
+
 text = 'Not The screen is not very good not'
 tokenized = nltk.word_tokenize(text)
+print(list(nltk.ngrams(tokenized,5)))
+'''
 tagged = nltk.pos_tag(tokenized)
 print ('Before Tagged : ',tagged)
 sentenceLength = len(tokenized)
@@ -25,4 +29,4 @@ print ('Tokenized :',tokenized)
 print ('After Tagged : ',tagged)
 print ('Sentence Tagged : ',sent_tagged)
 print ('Named Entity : ',namedEnt)
-
+'''
