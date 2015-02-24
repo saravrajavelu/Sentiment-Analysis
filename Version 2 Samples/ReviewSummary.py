@@ -16,6 +16,7 @@ c = conn.cursor()
 #Declare productReview class
 class productReview:
     def __init__(self):
+        self.productName = ''
         self.userReviews = []
         self.userScores = []
         self.productFeatures = []
@@ -56,19 +57,38 @@ class productReview:
                 self.featureOccurence.append(0)
                 self.featureScore.append(0)
 
+    def ratingScale(self,score):
+            scale = ['poor','fair','average','good','excellent']
+            if score < 2:
+                output = 'The reviews for <insert name> have been ' + scale[0] + '.'
+            elif score >= 2 & score <4:
+                output = 'The reviews for <insert name> have been ' + scale[1] + '.'
+            elif score >= 4 & score <6:
+                output = 'The reviews for <insert name> have been ' + scale[2] + '.'
+            elif score >= 6 & score <8:
+                output = 'The reviews for <insert name> have been ' + scale[3] + '.'
+            elif score >= 8:
+                output = 'The reviews for <insert name> have been ' + scale[4] + '.'
+            return(output)
+                
     def displaySummary(self):
             print('***************  Product Summary ***************')
             summary = ''
+            overallScore = sum(self.featureScore)/sum(self.featureOccurence)
+            
             for item in self.productFeatures:
                 index = self.productFeatures.index(item)
-                summary = summary + ' ' + str(item)  + ' was considered to be ' + str(max(set(self.featureDescribers[index]), key=self.featureDescribers[index].count)) + '.'
                 if self.featureOccurence[index] == 0:
                     print(str(item),' : -NA- ')
                 else:
+                    summary = summary + ' ' + str(item)  + ' was considered to be ' + str(max(set(self.featureDescribers[index]), key=self.featureDescribers[index].count)) + '.'
                     totalScore = int(self.featureScore[index])/int(self.featureOccurence[index])
                     print(str(item),' : ',str(totalScore))
-            print('Overview : ',summary)
+            print('Overall Score : ',overallScore)
+            
+            print('Overview : ',self.ratingScale(int(overallScore)),summary)
 
+           
 
 #Initialize productReview class
 reviewList = productReview()
