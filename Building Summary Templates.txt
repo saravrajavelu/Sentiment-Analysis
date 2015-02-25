@@ -1,0 +1,16 @@
+-/+ People who purchased the product, felt that the <f> was <e>. 
+- While they felt that <f> was <e>.
++ Though, the <f> was consider <e>.
+- Although the <f> was <e>.
++ They found the <f> to be <e>.
+
+
++/- Many people felt that <f> was <e> in the product. 
+There were others who considered that <f> could be <e>
+
+-/+ General opinion about <f> was <e>
+
+
+
+
+?  However, <f> (,<f> ...) were not mentioned by the customers.
