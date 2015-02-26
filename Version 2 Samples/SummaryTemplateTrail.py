@@ -10,15 +10,14 @@ def SummaryTemplate(features,scores,words):
     partTwoNeutral = ['people ','customers ','purchasers ','shoppers ','buyers ','consumers ','reviewers ']
     partTwoPositive = ['advocates ','patrons ','backers ','exponents ','endosers ']
     partTwoNegative = ['opposers ','critics ','opposers ','critics ','opposers ','critics ']
-    partThreeNeutral = ['found ','felt ','deduced ','considered ','recognized ','surmised that','infered that ','believed that ','perceived that ']
+    partThreeNeutral = ['found ','felt ','deduced ','considered ','recognized ','surmised that ','infered that ','believed that ','perceived that ']
     partThreePositive = ['appreciated  ','agreed that ','recoginzed ','certified ','applauded ','commended ','praised ','lauded ','endosered ','extolled ','raved about ']
     partThreeNegative = ['criticized ','depreciated ','decried  ','rebuked ','censured ','undervalued ']
     partFour = ['it\'s ','the product\'s ','the ','it\'s ','the product\'s ','the ']
     #partFive = ['<<!f!>>']
-    partFive = ['processor']
-    partSix = ['was ','to be ']
+    partSix = [' was ',' to be ']
     #partSeven = ['<<!e!>>']
-    partSeven = ['fast']
+    
 
     shuffle(partOne)
     shuffle(partTwoNeutral)
@@ -28,9 +27,8 @@ def SummaryTemplate(features,scores,words):
     shuffle(partThreePositive)
     shuffle(partThreeNegative)
     shuffle(partFour)
-    shuffle(partFive)
     #shuffle(partSix)
-    shuffle(partSeven)
+    
 
     i1 = 0
     i2Neu = 0
@@ -57,7 +55,72 @@ def SummaryTemplate(features,scores,words):
                 regretCount -=1
             else:
                 regretLine = regretLine + " and " + str(features[i])
+        elif scores[i] >= 7.5:
+            if i == 0 :
+                summaryReport = partTwoPositive[i2Pos].capitalize() + partThreePositive[i3Pos] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+            elif (((scores[i-1] < 5 ) & (scores[i] >5)) | ((scores[i] < 5 ) & (scores[i-1] >5))):
+                summaryReport = summaryReport + partOne[i1] + partTwoPositive[i2Pos] + partThreePositive[i3Pos] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+                i1 += 1
+            else:
+                summaryReport = summaryReport + partTwoPositive[i2Pos].capitalize() + partThreePositive[i3Pos] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+            i2Pos += 1
+            i3Pos += 1
+            i4 += 1
+        elif scores[i] < 2.5:
+            if i == 0 :
+                summaryReport = partTwoNegative[i2Neg].capitalize() + partThreeNegative[i3Neg] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+            elif (((scores[i-1] < 5 ) & (scores[i] >5)) | ((scores[i] < 5 ) & (scores[i-1] >5))):
+                summaryReport = summaryReport + partOne[i1] + partTwoNegative[i2Neg] + partThreeNegative[i3Neg] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+                i1 += 1
+            else:
+                summaryReport = summaryReport + partTwoNegative[i2Neg].capitalize() + partThreeNegative[i3Neg] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+            i2Neg += 1
+            i3Neg += 1
+            i4 += 1
+
+        elif (scores[i] >= 2.5) & (scores[i] < 7.5):
+            if i == 0 :
+                if partTwoNeutral[i2Neu] in ['found ','considered ','recognized ']:
+                    summaryReport = partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
+                else:
+                    summaryReport = partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[0] + words[i] + '. '
+            elif (((scores[i-1] < 5 ) & (scores[i] >5)) | ((scores[i] < 5 ) & (scores[i-1] >5))):
+                if partTwoNeutral[i2Neu] in ['found ','considered ','recognized ']:
+                    summaryReport = summaryReport + partOne[i1] + partTwoNeutral[i2Neu] + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
+                else:
+                    summaryReport = summaryReport + partOne[i1] + partTwoNeutral[i2Neu] + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[0] + words[i] + '. '
+                i1 += 1
+            else:
+                if partTwoNeutral[i2Neu] in ['found ','considered ','recognized ']:
+                    summaryReport = summaryReport + partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
+                else:
+                    summaryReport = summaryReport + partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[0] + partSix[1] + words[i] + '. '
+            i2Neu += 1
+            i3Neu += 1
+            i4 += 1
+
+        '''
+
+        elif (scores[i] >= 2.5) & (scores[i] < 7.5):
+            if partTwoNeutral[i2Neu] in ['found ','considered ','recognized ',]:
+                if i == 0 :
+                    summaryReport = partTwoNeutral[i2Neu] + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
+                else:
+                    summaryReport = summaryReport + partTwoNeutral[i2Neu] + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
+            elif (((scores[i-1] < 5 ) & (scores[i] >5)) | ((scores[i] < 5 ) & (scores[i-1] >5))):
+                summaryReport = summaryReport + partOne[i1] + partTwoNeutral[i2Neu] + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[0] + words[i] + '. '
+                i1 += 1
+            else:
+                if i == 0 :
+                    summaryReport = partTwoNeutral[i2Neu] + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[0] + words[i] + '. '
+                else:
+                    summaryReport = summaryReport + partTwoNeutral[i2Neu] + partThreeNeutral[i3Neu] + partFour[i4] + features[0] + partSix[1] + words[i] + '. '
+            i2Neu += 1
+            i3Neu += 1
+            i4 += 1
+        '''    
             
+        '''    
         elif partTwoNeutral[i2] in ['found ','considered ','recognized ',]:
             print(partOne[i1],partTwoNeutral[i2],partThreeNeutral[i3],partFour[i4],partFive[i5],partSix[1],partSeven[i7],'.')
             i1 += 1
@@ -70,10 +133,13 @@ def SummaryTemplate(features,scores,words):
             i2 += 1
             i3 += 1
             i4 += 1
+        '''
+            
     if len(features) == scores.count('?'):
         regretLine = regretLine.capitalize() + ' were not mentioned by customers in their reviews.'
-    else
+    else:
         regretLine = 'However ' + regretLine +  ' were not mentioned by customers in their reviews.'
+    print(summaryReport)
     print(regretLine)
 
 SummaryTemplate(features,scores,words)
