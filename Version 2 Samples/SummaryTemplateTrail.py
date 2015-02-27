@@ -62,7 +62,8 @@ def SummaryTemplate(features,scores,words):
                 summaryReport = summaryReport + partOne[i1] + partTwoPositive[i2Pos] + partThreePositive[i3Pos] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
                 i1 += 1
             else:
-                summaryReport = summaryReport + partTwoPositive[i2Pos].capitalize() + partThreePositive[i3Pos] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+                #summaryReport = summaryReport + partTwoPositive[i2Pos].capitalize() + partThreePositive[i3Pos] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+                summaryReport = summaryReport + 'They ' + partThreePositive[i3Pos] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
             i2Pos += 1
             i3Pos += 1
             i4 += 1
@@ -73,7 +74,8 @@ def SummaryTemplate(features,scores,words):
                 summaryReport = summaryReport + partOne[i1] + partTwoNegative[i2Neg] + partThreeNegative[i3Neg] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
                 i1 += 1
             else:
-                summaryReport = summaryReport + partTwoNegative[i2Neg].capitalize() + partThreeNegative[i3Neg] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+                #summaryReport = summaryReport + partTwoNegative[i2Neg].capitalize() + partThreeNegative[i3Neg] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
+                summaryReport = summaryReport + 'They ' + partThreeNegative[i3Neg] + partFour[i4] + features[i] + ' as they felt it was ' + words[i] + '. '
             i2Neg += 1
             i3Neg += 1
             i4 += 1
@@ -92,9 +94,11 @@ def SummaryTemplate(features,scores,words):
                 i1 += 1
             else:
                 if partTwoNeutral[i2Neu] in ['found ','considered ','recognized ']:
-                    summaryReport = summaryReport + partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
+                    #summaryReport = summaryReport + partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
+                    summaryReport = summaryReport + 'They ' + partThreeNeutral[i3Neu] + partFour[i4] + features[i] + partSix[1] + words[i] + '. '
                 else:
-                    summaryReport = summaryReport + partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[0] + partSix[1] + words[i] + '. '
+                    #summaryReport = summaryReport + partTwoNeutral[i2Neu].capitalize() + partThreeNeutral[i3Neu] + partFour[i4] + features[0] + partSix[1] + words[i] + '. '
+                    summaryReport = summaryReport + 'They ' + partThreeNeutral[i3Neu] + partFour[i4] + features[0] + partSix[1] + words[i] + '. '
             i2Neu += 1
             i3Neu += 1
             i4 += 1
