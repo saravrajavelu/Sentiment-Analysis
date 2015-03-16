@@ -158,13 +158,16 @@ for i in range(0,(total_no_of_reviews + 1),10):
 print('No.of reviews found : ' + str(reviewList.count))
 
 
+c.execute('delete from productList where productID =(?)',(pid[0],))
+conn.commit()
+c.execute('delete from userReviews where pid =(?)',(pid[0],))
+conn.commit()
+
 reviewList.pid = pid
 timestamp = time.strftime("%a %b %d %H:%M:%S %Y")
 c.execute('insert into productList values (?,?,?)',(QUERY,pid[0],timestamp,))
 conn.commit()
 
-
-#time.strftime("%a %b %d %H:%M:%S %Y")
 
 for i in range(reviewList.count):
     c.execute('insert into userReviews values(?,?,?)',(reviewList.pid[0],reviewList.userScores[i],reviewList.userReviews[i],))

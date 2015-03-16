@@ -42,7 +42,9 @@ class productReview:
             print (' Choose specifications : ')
             for i in range(noSpec):
                 feature = input()
-                self.productFeatures.append(str(feature))
+                feature = str(feature)
+                feature = feature.lower().capitalize()
+                self.productFeatures.append(feature)
                 self.featureOccurence.append(0)
                 self.featureScore.append(0)
 
